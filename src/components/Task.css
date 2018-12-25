@@ -1,9 +1,9 @@
 .todoCard ul{
-  height: 200px;
+
   list-style: none;
 }
 .todoCard {
   padding: 10px;
   margin: 10px 50px;
-  border: black 1px solid;
+
 }

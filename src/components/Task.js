@@ -3,22 +3,15 @@ import './Task.css'
 
 class Task extends React.Component {
 
-  state = { taskItem: '',taskList:[] }
-
   onInputChange = (e) => {
-    this.setState({taskItem: e.target.value})
+    // console.log(e.target.value)
+    this.props.taskItem(e.target.value)
   }
 
   onFormSubmit = (e) => { 
     e.preventDefault()
-    let items = this.state.taskList.concat(this.state.taskItem)
+    this.props.taskList(this.props.state.taskItem)
     e.target.reset()
-    this.setState({taskList: items})
-  }
-
-  deleteItem = (index) => {
-    let item =this.state.taskList
-    this.setState({taskitem: item.splice(index,1)})
   }
 
   render(){
@@ -26,14 +19,20 @@ class Task extends React.Component {
       <div>
         <div className="todoCard">
           <form onSubmit={this.onFormSubmit}>
-            <label>Add Task</label>
+            <label> <i className="icon ion-md-add"></i> </label>
             <input type='text' onChange={this.onInputChange}/>
           </form>
           <ul>
-            {this.state.taskList.map((item, i) => {
+            {this.props.state.taskList.map((item, i) => {
               return (
                 <div key={i}>
-                  <li>{item} <button item={item} onClick={(e)=>{this.deleteItem(i)}}> Delete </button></li>
+                  <li>{`${item} `}
+                    <button
+                      item={item}
+                      onClick={(e)=>{this.props.deleteItem(i)}}>
+                      <i className="icon ion-md-close"></i>
+                    </button>
+                  </li>
                 </div>
               )
             })}
