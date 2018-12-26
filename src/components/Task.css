@@ -1,9 +1,41 @@
-.todoCard ul{
-
-  list-style: none;
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.todoCard {
-  padding: 10px;
-  margin: 10px 50px;
 
+.todoCard form input {
+  border: none;
+  border-bottom: 1px dotted gray;
+  padding: 10px;
+}
+.todoCard form input:focus {
+  border-bottom: 1px dotted gray;
+  outline: none;
+}
+
+.todoCard button {
+  display: inline-block;
+  margin-left: 20px;
+  padding: 5px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5%;
+  color: gray;
+  font-size: 10px;
+}
+
+.todoCard button:hover {
+  background: dodgerblue;
+  color: white;
+}
+
+.task-item th{
+  
+  font-weight: 100;
+  font-size: 12px;
+  text-align: left;
+}
+.task-item th:nth-child(2){
+  width: 50px;
 }

@@ -19,23 +19,33 @@ class Task extends React.Component {
       <div>
         <div className="todoCard">
           <form onSubmit={this.onFormSubmit}>
-            <label> <i className="icon ion-md-add"></i> </label>
-            <input type='text' onChange={this.onInputChange}/>
+            <input
+            type='text'
+            placeholder="add item"
+            onChange={this.onInputChange}
+            maxlength="100"/>
           </form>
-          <ul>
+          <table>
+            <tbody>
             {this.props.state.taskList.map((item, i) => {
               return (
-                <div key={i}>
-                  <li>{`${item} `}
+                <tr className="task-item" key={i}>
+                  <th><input type="checkbox"/></th>
+                  <th>{`${item}`}</th>  
+                  <th>
                     <button
                       item={item}
                       onClick={(e)=>{this.props.deleteItem(i)}}>
-                      <i className="icon ion-md-close"></i>
-                    </button>
-                  </li>
-                </div>
+                      remove
+                    </button> 
+                  </th>  
+                </tr>
               )
             })}
+            </tbody>
+          </table>
+          <ul>
+
           </ul>
         </div>
       </div>

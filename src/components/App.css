@@ -3,7 +3,5 @@ html{
 }
 
 .task {
-  /* color:red; */
-  margin: 0 auto;
-  text-align: center;
+  margin: 20px;
 }
