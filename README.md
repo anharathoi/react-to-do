@@ -2,7 +2,7 @@
 ---
 Ongoing React Practice with a simple todo app
 ___
-#### What you can do currently with this?
+#### Current Features
 
 - you can add item
 - you can remove item
