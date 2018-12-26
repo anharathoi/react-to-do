@@ -1,5 +1,6 @@
 import React from 'react'
 import Task from './Task'
+import TaskBoard from './TaskBoard'
 import './App.css'
 
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
     return (
       
       <div className="task">
+        < TaskBoard />
         <h2>To Do List</h2>
         < Task
           state={this.state}
