@@ -5,7 +5,10 @@ const TaskBoard = (props) => {
   // console.log(props)
   return(
     <div>
-      #TaskBoard for all task-lists
+      <div>
+        <button>Add todo card</button>
+      </div>
+      <p>#TaskBoard for all task-lists</p>
       <div>
         < Task 
           state={props.state}
