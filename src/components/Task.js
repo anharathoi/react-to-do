@@ -2,9 +2,8 @@ import React from 'react'
 import './Task.css'
 
 class Task extends React.Component {
-
+  
   onInputChange = (e) => {
-    // console.log(e.target.value)
     this.props.taskItem(e.target.value)
   }
 
@@ -23,7 +22,7 @@ class Task extends React.Component {
             type='text'
             placeholder="add item"
             onChange={this.onInputChange}
-            maxlength="100"/>
+            maxLength="100"/>
           </form>
           <table>
             <tbody>

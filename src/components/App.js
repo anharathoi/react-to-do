@@ -1,5 +1,5 @@
 import React from 'react'
-import Task from './Task'
+// import Task from './Task'
 import TaskBoard from './TaskBoard'
 import './App.css'
 
@@ -19,21 +19,16 @@ class App extends React.Component {
     this.setState({taskitem: item.splice(index,1)})
   }
 
-  componentDidMount(){
-
-  }
-  
   render(){
     return (
-      
       <div className="task">
-        < TaskBoard />
         <h2>To Do List</h2>
-        < Task
+        < TaskBoard
           state={this.state}
           taskItem={this.accessItem}
           taskList={this.accessItemList}
-          deleteItem={this.deleteItem}/>
+          deleteItem={this.deleteItem}
+        />
       </div>
     )
   }
