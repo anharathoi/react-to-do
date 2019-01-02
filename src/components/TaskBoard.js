@@ -10,7 +10,6 @@ class TaskBoard extends React.Component {
       todoCard: [...this.state.todoCard,[]]
     })
   }
-
   render(){
     let {todoCard} = this.state
     return(
@@ -19,17 +18,8 @@ class TaskBoard extends React.Component {
         <div className="todoBoard">
             {todoCard.map((val, i)=> {
               return (
-                <div>
-                  < Task 
-                    key={i}
-                    state={this.props.state}
-                    taskItem={this.props.taskItem}
-                    taskList={this.props.taskList}
-                    deleteItem={this.props.deleteItem}
-                />
-                <p>
-                  {this.state.todoCard}
-                </p>
+                <div key={i}>
+                  < Task />
                 </div>
               )
             })}
