@@ -3,14 +3,23 @@ import './Task.css'
 
 class Task extends React.Component {
   state = {taskItem: '',taskList:[] }
-  
-  onInputChange = (e) => {
-    this.props.taskItem(e.target.value)
+  taskItem = (item) => {
+    this.setState({taskItem: item})
   }
-
+  taskList = (item) => {
+    let items = this.state.taskList.concat(item)
+    this.setState({taskList: items})
+  }
+  deleteItem = (index) => {
+    let item = this.state.taskList
+    this.setState({taskitem: item.splice(index,1)})
+  }
+  onInputChange = (e) => {
+    this.taskItem(e.target.value)
+  }
   onFormSubmit = (e) => { 
     e.preventDefault()
-    this.props.taskList(this.props.state.taskItem)
+    this.taskList(this.state.taskItem)
     e.target.reset()
   }
 
@@ -26,7 +35,7 @@ class Task extends React.Component {
           </form>
           <table>
             <tbody>
-            {this.props.state.taskList.map((item, i) => {
+            {this.state.taskList.map((item, i) => {
               return (
                 <tr className="task-item" key={i}>
                   <th><input type="checkbox"/></th>
@@ -34,7 +43,7 @@ class Task extends React.Component {
                   <th>
                     <button
                       item={item}
-                      onClick={(e)=>{this.props.deleteItem(i)}}>
+                      onClick={(e)=>{this.deleteItem(i)}}>
                       remove
                     </button> 
                   </th>  
@@ -43,9 +52,6 @@ class Task extends React.Component {
             })}
             </tbody>
           </table>
-          <ul>
-
-          </ul>
         </div>
     )
   }

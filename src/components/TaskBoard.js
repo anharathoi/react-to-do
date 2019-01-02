@@ -5,9 +5,9 @@ import './Task.css'
 class TaskBoard extends React.Component {
   state = {todoCard: [] }
   handleSubmit = (e) => { e.preventDefault() }
-  addTodoCard = (card) => {
+  addTodoCard = (e) => {
     this.setState({
-      todoCard: [...this.state.todoCard, card]
+      todoCard: [...this.state.todoCard,[]]
     })
   }
 
@@ -19,24 +19,20 @@ class TaskBoard extends React.Component {
         <div className="todoBoard">
             {todoCard.map((val, i)=> {
               return (
-                < Task 
-                  key={i}
-                  state={this.props.state}
-                  taskItem={this.props.taskItem}
-                  taskList={this.props.taskList}
-                  deleteItem={this.props.deleteItem}
+                <div>
+                  < Task 
+                    key={i}
+                    state={this.props.state}
+                    taskItem={this.props.taskItem}
+                    taskList={this.props.taskList}
+                    deleteItem={this.props.deleteItem}
                 />
+                <p>
+                  {this.state.todoCard}
+                </p>
+                </div>
               )
             })}
-          {/* <p># TaskBoard for all task-lists</p> */}
-          <div className="todoBoard">
-            < Task 
-              state={this.props.state}
-              taskItem={this.props.taskItem}
-              taskList={this.props.taskList}
-              deleteItem={this.props.deleteItem}
-            />
-          </div>
         </div>
       </div>
     )
