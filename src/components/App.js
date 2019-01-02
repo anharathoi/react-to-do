@@ -1,10 +1,9 @@
 import React from 'react'
-// import Task from './Task'
 import TaskBoard from './TaskBoard'
 import './App.css'
 
 class App extends React.Component {
-  state = { taskItem: '',taskList:[] }
+  state = {taskItem: '',taskList:[] }
 
   accessItem = (item) => {
     this.setState({taskItem: item})
@@ -13,9 +12,8 @@ class App extends React.Component {
     let items = this.state.taskList.concat(item)
     this.setState({taskList: items})
   }
-
   deleteItem = (index) => {
-    let item =this.state.taskList
+    let item = this.state.taskList
     this.setState({taskitem: item.splice(index,1)})
   }
 

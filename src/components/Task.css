@@ -4,6 +4,18 @@ html, body {
   padding: 0;
 }
 
+.todoBoard {
+  display: flex;
+  flex-wrap: wrap;
+}
+.todoCard {
+  padding-left: 20px;
+  margin: 10px;
+  border: black solid 1px;
+  width: 180px;
+  overflow: scroll;
+}
+
 .todoCard form input {
   border: none;
   border-bottom: 1px dotted gray;
@@ -14,9 +26,8 @@ html, body {
   outline: none;
 }
 
-.todoCard button {
+button {
   display: inline-block;
-  margin-left: 20px;
   padding: 5px;
   background-color: whitesmoke;
   border: none;
@@ -25,9 +36,13 @@ html, body {
   font-size: 10px;
 }
 
-.todoCard button:hover {
+button:hover {
   background: dodgerblue;
   color: white;
+}
+
+.todoCard button{
+  margin-left: 20px;
 }
 
 .task-item th{

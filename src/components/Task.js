@@ -2,6 +2,7 @@ import React from 'react'
 import './Task.css'
 
 class Task extends React.Component {
+  state = {taskItem: '',taskList:[] }
   
   onInputChange = (e) => {
     this.props.taskItem(e.target.value)
@@ -15,7 +16,6 @@ class Task extends React.Component {
 
   render(){
     return(
-      <div>
         <div className="todoCard">
           <form onSubmit={this.onFormSubmit}>
             <input
@@ -47,7 +47,6 @@ class Task extends React.Component {
 
           </ul>
         </div>
-      </div>
     )
   }
 }
